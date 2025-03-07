@@ -167,6 +167,19 @@ If you upgrade to the Basic Tier, you may need to adjust your code to handle the
 
 By following these steps, you can effectively utilize the Basic Tier's capabilities while adhering to Twitter's rate limits.
 
+## Visualization Results
+
+### Sentiment Distribution:
+![Sentiment Pie Chart](sentiment_pie.png)
+
+### Emotion Distribution:
+![Emotion Pie Chart](emotion_pie.png)
+
+### Word Cloud:
+![Word Cloud](wordcloud.png)
+
+These images provide a graphical representation of the sentiment and emotions detected in the tweets.
+
 ---
 
 *Note*: Always ensure compliance with Twitter's Developer Agreement and Policy when using the API. 
