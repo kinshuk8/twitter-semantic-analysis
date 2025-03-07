@@ -1,6 +1,6 @@
 import json
 import matplotlib.pyplot as plt
-import seaborn as sns
+from wordcloud import WordCloud
 from collections import Counter
 
 # Load analyzed tweets
@@ -15,21 +15,33 @@ emotions = [tweet["emotion"] for tweet in tweets]
 sentiment_counts = Counter(sentiments)
 emotion_counts = Counter(emotions)
 
-# Define function for plotting
-def plot_distribution(data, title, xlabel, ylabel, filename):
-    plt.figure(figsize=(8, 5))
-    sns.barplot(x=list(data.keys()), y=list(data.values()), palette="viridis")
+def plot_pie_chart(data, title, filename):
+    plt.figure(figsize=(6, 6))
+    plt.pie(data.values(), labels=data.keys(), autopct="%1.1f%%", colors=plt.cm.Paired.colors, startangle=140)
     plt.title(title)
-    plt.xlabel(xlabel)
-    plt.ylabel(ylabel)
-    plt.grid(axis="y", linestyle="--", alpha=0.7)
-    plt.savefig(filename)  # Save the plot as an image
+    plt.axis("equal")
+    plt.savefig(filename)
     plt.show()
 
-# Plot Sentiment Distribution
-plot_distribution(sentiment_counts, "Sentiment Distribution", "Sentiment", "Count", "sentiment_plot.png")
+# Generate a word cloud for sentiment analysis
+all_text = " ".join(tweet["text"] for tweet in tweets)
+wordcloud = WordCloud(width=800, height=400, background_color='white').generate(all_text)
 
-# Plot Emotion Distribution
-plot_distribution(emotion_counts, "Emotion Distribution", "Emotion", "Count", "emotion_plot.png")
+def plot_wordcloud():
+    plt.figure(figsize=(10, 5))
+    plt.imshow(wordcloud, interpolation='bilinear')
+    plt.axis("off")
+    plt.title("Most Frequent Words in Tweets")
+    plt.savefig("wordcloud.png")
+    plt.show()
 
-print("✅ Visualizations saved as 'sentiment_plot.png' and 'emotion_plot.png'")
+# Plot Sentiment Pie Chart
+plot_pie_chart(sentiment_counts, "Sentiment Distribution", "sentiment_pie.png")
+
+# Plot Emotion Pie Chart
+plot_pie_chart(emotion_counts, "Emotion Distribution", "emotion_pie.png")
+
+# Generate and display the word cloud
+plot_wordcloud()
+
+print("✅ Pie charts and word cloud saved as 'sentiment_pie.png', 'emotion_pie.png', and 'wordcloud.png'")
