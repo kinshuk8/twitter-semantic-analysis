@@ -1,0 +1,6 @@
+tweepy
+nltk
+textblob
+matplotlib
+seaborn
+python-dotenv
