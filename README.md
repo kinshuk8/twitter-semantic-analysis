@@ -170,10 +170,6 @@ If you upgrade to the Basic Tier, you may need to adjust your code to handle the
 
 By following these steps, you can effectively utilize the Basic Tier's capabilities while adhering to Twitter's rate limits.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ---
 
 *Note*: Always ensure compliance with Twitter's Developer Agreement and Policy when using the API. 
