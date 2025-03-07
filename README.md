@@ -91,19 +91,16 @@ This project performs semantic analysis and emotion detection on tweets using NL
 
    This will produce bar charts displaying sentiment and emotion distributions.
 
-## Twitter API Access Tiers
+📢 ##Twitter API Limits
+⚠️ ##Free Tier Limitations:
 
-Twitter offers various API access tiers, each with specific rate limits:
+Retrieve: Up to 100 tweets per month
+Post: Up to 500 tweets per month
 
-- **Free Tier**: Allows posting up to 1,500 tweets per month at the application level. Read access is limited and subject to variable rate limits across different endpoints. citeturn0search12
+💡 ##Upgrading to Basic Tier ($200/month):
 
-- **Basic Tier**: Priced at $100 per month, it provides enhanced access with the following limits:
-  - **Posting**: Up to 50,000 tweets per month.
-  - **Reading**: Up to 10,000 tweets per month. citeturn0search8
-
-  *Note*: There is a cap of 3,000 posts per account per month. citeturn0search8
-
-For comprehensive details on rate limits, refer to the [Twitter Developer Documentation](https://developer.twitter.com/en/docs/rate-limits).
+Retrieve: Up to 15,000 tweets per month
+🔗 More details: Twitter Developer Portal
 
 ## Updating the Code for Basic Tier Access
 
